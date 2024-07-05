@@ -1,11 +1,13 @@
-namespace screen{
-    //% blockId=screen
-    //% block="plot at $index"
-    //% index.min=0 index.max=25
-    export function plot(index:number):void{
-        index |= 0;
-        const x = Math.floor(index/5);
-        const y = Math.floor(index%5);
-        led.plot(x,y)
+namespace IckiSKill{
+    //% blockId=IchiBlock
+    //% block="Di chuyển về trước với tốc độ $vol"
+    //% vol.min=0 vol.max=255
+    export function forward(vol:number):void{
+        robotbit.MotorRunDual(
+            robotbit.Motors.M1A,
+            vol,
+            robotbit.Motors.M1A,
+            vol
+        )
     }
 }
